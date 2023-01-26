@@ -1,13 +1,8 @@
 package transport;
 
-public class Car {
-    private final String brand;
-    private final String model;
-    private double engineVolume;
-    private String color;
-    private final int year;
-    private final String country;
+public class Car extends Transport {
 
+    private double engineVolume;
     private String transmission;
     private final String bodyType;
     private String regNumber;
@@ -16,24 +11,21 @@ public class Car {
 
 
 
-    public Car(String brand, String model, double engineVolume, String color, int year, String country,
+    public Car(String brand, String model, double engineVolume, String color, int year, String country, int maxSpeed,
                String transmission, String bodyType, String regNumber, int capacity, boolean seasonTires) {
+        super(brand, model,  color, year, country, maxSpeed);
 
-        if (brand == "" || brand == null) { brand = "default"; }
+
         if (engineVolume <= 0) { engineVolume = 1.5; }
-        if (year <= 0) { year = 2000; }
-        if (color == "" || color == null) { color = "белый"; }
+
         if (transmission == "" || transmission == null) { transmission = "default"; }
         if (bodyType == "" || bodyType == null) { bodyType = "default"; }
         if (regNumber == "" || regNumber == null) { regNumber = "default"; }
         if (capacity <= 0) { capacity = 5; }
 
-        this.brand = brand;
-        this.model = model;
+
         this.engineVolume = engineVolume;
-        this.color = color;
-        this.year = year;
-        this.country = country;
+
         this.transmission = transmission;
         this.bodyType = bodyType;
         this.regNumber = regNumber;
@@ -48,13 +40,9 @@ public class Car {
             seasonTires = true;
         }
     }
-    public String getBrand() {
-        return brand;
-    }
 
-    public String getModel() {
-        return model;
-    }
+
+
 
     public double getEngineVolume() {
         return engineVolume;
@@ -64,21 +52,12 @@ public class Car {
         this.engineVolume = engineVolume;
     }
 
-    public String getColor() {
-        return color;
-    }
 
-    public void setColor(String color) {
-        this.color = color;
-    }
 
-    public int getYear() {
-        return year;
-    }
 
-    public String getCountry() {
-        return country;
-    }
+
+
+
 
     public String getTransmission() {
         return transmission;
@@ -114,17 +93,12 @@ public class Car {
 
     @Override
     public String toString() {
-        return "Автомобиль: " +
-                "бренд = " + brand + '\'' +
-                ", модель = " + model + '\'' +
+        return super.toString() +
                 ", объём двигателя = " + engineVolume +
-                ", цвет = " + color + '\'' +
-                ", год выпуска = " + year +
-                ", страна сборки = " + country + '\'' +
                 ", коробка передач = " + transmission +'\'' +
                 ", тип кузова = " + bodyType + '\'' +
                 ", рег. номер = " + regNumber + '\'' +
                 ", количество мест = " + capacity + '\'' +
-                (seasonTires ? "зимняя" : "летняя" + " резина") + '\'';
+                (seasonTires ? "зимняя" : "летняя " + "резина") + '\'';
     }
 }
