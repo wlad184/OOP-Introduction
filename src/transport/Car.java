@@ -99,6 +99,6 @@ public class Car extends Transport {
                 ", тип кузова = " + bodyType + '\'' +
                 ", рег. номер = " + regNumber + '\'' +
                 ", количество мест = " + capacity + '\'' +
-                (seasonTires ? "зимняя" : "летняя" + " резина") + '\'';
+                (seasonTires ? "зимняя" : "летняя " + "резина") + '\'';
     }
 }
