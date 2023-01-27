@@ -1,104 +1,40 @@
 package transport;
 
-public class Car extends Transport {
-
-    private double engineVolume;
-    private String transmission;
-    private final String bodyType;
-    private String regNumber;
-    private final int capacity;
-    private boolean seasonTires;
+public class Car extends Transport implements Competing {
 
 
-
-    public Car(String brand, String model, double engineVolume, String color, int year, String country, int maxSpeed,
-               String transmission, String bodyType, String regNumber, int capacity, boolean seasonTires) {
-        super(brand, model,  color, year, country, maxSpeed);
-
-
-        if (engineVolume <= 0) { engineVolume = 1.5; }
-
-        if (transmission == "" || transmission == null) { transmission = "default"; }
-        if (bodyType == "" || bodyType == null) { bodyType = "default"; }
-        if (regNumber == "" || regNumber == null) { regNumber = "default"; }
-        if (capacity <= 0) { capacity = 5; }
-
-
-        this.engineVolume = engineVolume;
-
-        this.transmission = transmission;
-        this.bodyType = bodyType;
-        this.regNumber = regNumber;
-        this.capacity = capacity;
-        this.seasonTires = seasonTires;
-
-    }
-    public void seasonOfTires(int month) {
-        if ((month >= 11 && month <= 12) || (month >= 1 && month <= 4)) {
-            seasonTires = false;
-        } else {
-            seasonTires = true;
-        }
+    public Car(String brand, String model, double engineVolume) {
+        super(brand, model, engineVolume);
     }
 
-
-
-
-    public double getEngineVolume() {
-        return engineVolume;
+    @Override
+    public void bestLapTime() {
+        Competing.super.bestLapTime();
     }
 
-    public void setEngineVolume(double engineVolume) {
-        this.engineVolume = engineVolume;
+    @Override
+    public void maxSpeed() {
+        Competing.super.maxSpeed();
     }
 
-
-
-
-
-
-
-
-    public String getTransmission() {
-        return transmission;
+    @Override
+    public void pitStop() {
+        Competing.super.pitStop();
     }
 
-    public void setTransmission(String transmission) {
-        this.transmission = transmission;
+    @Override
+    public void startMoving() {
+        super.startMoving();
     }
 
-    public String getBodyType() {
-        return bodyType;
-    }
-
-    public String getRegNumber() {
-        return regNumber;
-    }
-
-    public void setRegNumber(String regNumber) {
-        this.regNumber = regNumber;
-    }
-
-    public int getCapacity() {
-        return capacity;
-    }
-
-    public boolean isSeasonTires() {
-        return seasonTires;
-    }
-
-    public void setSeasonTires(boolean seasonTires) {
-        this.seasonTires = seasonTires;
+    @Override
+    public void finishTheMove() {
+        super.finishTheMove();
     }
 
     @Override
     public String toString() {
-        return super.toString() +
-                ", объём двигателя = " + engineVolume +
-                ", коробка передач = " + transmission +'\'' +
-                ", тип кузова = " + bodyType + '\'' +
-                ", рег. номер = " + regNumber + '\'' +
-                ", количество мест = " + capacity + '\'' +
-                (seasonTires ? "зимняя" : " летняя " + " резина ") + '\'';
+        return super.toString();
+        }
     }
-}
+
