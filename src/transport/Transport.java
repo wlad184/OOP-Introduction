@@ -1,18 +1,18 @@
 package transport;
 
-public abstract class Transport {
+public abstract class Transport<T extends Driver> implements Competing{
     private final String brand;
     private final String model;
     private double engineVolume;
-   // private String color;
-   // private final int year;
-    //private final String country;
-    //private int maxSpeed;
+   private T driver;
 
-    public Transport(String brand, String model, double engineVolume/*String color, int year, String country, int maxSpeed*/) {
+    public Transport(String brand, String model, double engineVolume, T driver) {
 
         if (brand == "" || brand == null) {
             brand = "default";
+        }
+        if (model == "" || model == null) {
+            model = "default";
         }
         if (engineVolume <= 0) { engineVolume = 1.5; }
 
@@ -20,10 +20,18 @@ public abstract class Transport {
         this.brand = brand;
         this.model = model;
         this.engineVolume = engineVolume;
+        this.driver = driver;
 
 
     }
 
+    public T getDriver() {
+        return driver;
+    }
+
+    public void setDriver(T driver) {
+        this.driver = driver;
+    }
 
     public String getBrand() {
         return brand;
@@ -37,16 +45,19 @@ public abstract class Transport {
     }
 
     public void setEngineVolume(double engineVolume) {
+        if (engineVolume <= 0){engineVolume =1.7;}
         this.engineVolume = engineVolume;
     }
 
 
-    public void startMoving(){
+    abstract void startMoving();
 
-   }
-   public void finishTheMove(){
+   abstract void finishTheMove();
+   abstract void printType();
 
-   }
+
+
+
 
     @Override
     public String toString() {

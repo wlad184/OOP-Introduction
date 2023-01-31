@@ -1,13 +1,7 @@
 package transport;
 
 public interface Competing {
-    default void pitStop(){
-
-    }
-    public default void bestLapTime(){
-
-    }
-    public default void maxSpeed(){
-
-    }
+    void pitStop();
+    void bestLapTime();
+    void maxSpeed();
 }

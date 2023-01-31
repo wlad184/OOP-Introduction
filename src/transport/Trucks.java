@@ -1,33 +1,49 @@
 package transport;
 
-public class Trucks extends Transport implements Competing{
-    public Trucks(String brand, String model, double engineVolume) {
-        super(brand, model,engineVolume);
+public class Trucks extends Transport<Category_C>{
+    private LoadCapacity loadCapasity;
+
+    public Trucks(String brand, String model, double engineVolume, Category_C driver, LoadCapacity loadCapasity) {
+        super(brand, model, engineVolume, driver);
+        this.loadCapasity = loadCapasity;
+    }
+
+    public LoadCapacity getLoadCapasity() {
+        return loadCapasity;
+    }
+
+    public void setLoadCapasity(LoadCapacity loadCapasity) {
+        this.loadCapasity = loadCapasity;
     }
 
     @Override
     public void bestLapTime() {
-        Competing.super.bestLapTime();
+
     }
 
     @Override
     public void startMoving() {
-        super.startMoving();
+
     }
 
     @Override
     public void finishTheMove() {
-        super.finishTheMove();
+
     }
 
     @Override
     public void maxSpeed() {
-        Competing.super.maxSpeed();
+
     }
 
     @Override
     public void pitStop() {
-        Competing.super.pitStop();
+
+    }
+
+    @Override
+    void printType() {
+
     }
 
     @Override

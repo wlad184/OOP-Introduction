@@ -1,35 +1,50 @@
 package transport;
 
-public class Car extends Transport implements Competing {
+public class Car extends Transport<Category_B> {
 
+    private BodyType bodyType;
 
-    public Car(String brand, String model, double engineVolume) {
-        super(brand, model, engineVolume);
+    public Car(String brand, String model, double engineVolume, Category_B driver, BodyType bodyType) {
+        super(brand, model, engineVolume, driver);
+        this.bodyType = bodyType;
+    }
+
+    public BodyType getBodyType() {
+        return bodyType;
+    }
+
+    public void setBodyType(BodyType bodyType) {
+        this.bodyType = bodyType;
     }
 
     @Override
     public void bestLapTime() {
-        Competing.super.bestLapTime();
+
     }
 
     @Override
     public void maxSpeed() {
-        Competing.super.maxSpeed();
+
     }
 
     @Override
     public void pitStop() {
-        Competing.super.pitStop();
+
     }
 
     @Override
     public void startMoving() {
-        super.startMoving();
+
     }
 
     @Override
     public void finishTheMove() {
-        super.finishTheMove();
+
+    }
+
+    @Override
+    void printType() {
+
     }
 
     @Override

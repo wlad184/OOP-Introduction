@@ -1,33 +1,51 @@
 package transport;
 
-public class Bus extends Transport implements Competing {
-    public Bus(String brand, String model, double engineVolume/*String color, int year, String country, int maxSpeed*/) {
-        super(brand, model,engineVolume/*color, year, country, maxSpeed*/);
+public class Bus extends Transport<Category_D> {
+    private CapacityPassengers capacityPassengers;
+
+    public Bus(String brand, String model, double engineVolume, Category_D driver, CapacityPassengers capacityPassengers) {
+        super(brand, model, engineVolume, driver);
+        this.capacityPassengers = capacityPassengers;
+    }
+
+    public CapacityPassengers getCapacityPassengers() {
+        return capacityPassengers;
+    }
+
+    public void setCapacityPassengers(CapacityPassengers capacityPassengers) {
+        this.capacityPassengers = capacityPassengers;
     }
 
     @Override
     public void startMoving() {
-        super.startMoving();
+
     }
 
     @Override
     public void finishTheMove() {
-        super.finishTheMove();
+
     }
 
     @Override
     public void bestLapTime() {
-        Competing.super.bestLapTime();
+
+
     }
 
     @Override
     public void pitStop() {
-        Competing.super.pitStop();
+        System.out.println("bvjvm");
+
+    }
+
+    @Override
+    void printType() {
+
     }
 
     @Override
     public void maxSpeed() {
-        Competing.super.pitStop();
+
     }
 
     @Override
