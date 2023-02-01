@@ -10,8 +10,11 @@ public abstract class Driver {
         this.driverLicenseOnOff = driverLicenseOnOff;
         this.experience = experience;
     }
+
     abstract void gou();
+
     abstract void stop();
+
     abstract void refuel();
 
 
@@ -34,6 +37,7 @@ public abstract class Driver {
     public void setExperience(int experience) {
         this.experience = experience;
     }
+
     @Override
     public String toString() {
         return "Driver{" +

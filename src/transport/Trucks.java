@@ -1,6 +1,6 @@
 package transport;
 
-public class Trucks extends Transport<Category_C>{
+public class Trucks extends Transport<Category_C> {
     private LoadCapacity loadCapasity;
 
     public Trucks(String brand, String model, double engineVolume, Category_C driver, LoadCapacity loadCapasity) {

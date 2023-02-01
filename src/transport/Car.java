@@ -50,6 +50,6 @@ public class Car extends Transport<Category_B> {
     @Override
     public String toString() {
         return super.toString();
-        }
     }
+}
 
