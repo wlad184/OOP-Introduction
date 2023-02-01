@@ -1,104 +1,55 @@
 package transport;
 
-public class Car extends Transport {
+public class Car extends Transport<Category_B> {
 
-    private double engineVolume;
-    private String transmission;
-    private final String bodyType;
-    private String regNumber;
-    private final int capacity;
-    private boolean seasonTires;
+    private BodyType bodyType;
 
-
-
-    public Car(String brand, String model, double engineVolume, String color, int year, String country, int maxSpeed,
-               String transmission, String bodyType, String regNumber, int capacity, boolean seasonTires) {
-        super(brand, model,  color, year, country, maxSpeed);
-
-
-        if (engineVolume <= 0) { engineVolume = 1.5; }
-
-        if (transmission == "" || transmission == null) { transmission = "default"; }
-        if (bodyType == "" || bodyType == null) { bodyType = "default"; }
-        if (regNumber == "" || regNumber == null) { regNumber = "default"; }
-        if (capacity <= 0) { capacity = 5; }
-
-
-        this.engineVolume = engineVolume;
-
-        this.transmission = transmission;
+    public Car(String brand, String model, double engineVolume, Category_B driver, BodyType bodyType) {
+        super(brand, model, engineVolume, driver);
         this.bodyType = bodyType;
-        this.regNumber = regNumber;
-        this.capacity = capacity;
-        this.seasonTires = seasonTires;
-
-    }
-    public void seasonOfTires(int month) {
-        if ((month >= 11 && month <= 12) || (month >= 1 && month <= 4)) {
-            seasonTires = false;
-        } else {
-            seasonTires = true;
-        }
     }
 
-
-
-
-    public double getEngineVolume() {
-        return engineVolume;
-    }
-
-    public void setEngineVolume(double engineVolume) {
-        this.engineVolume = engineVolume;
-    }
-
-
-
-
-
-
-
-
-    public String getTransmission() {
-        return transmission;
-    }
-
-    public void setTransmission(String transmission) {
-        this.transmission = transmission;
-    }
-
-    public String getBodyType() {
+    public BodyType getBodyType() {
         return bodyType;
     }
 
-    public String getRegNumber() {
-        return regNumber;
+    public void setBodyType(BodyType bodyType) {
+        this.bodyType = bodyType;
     }
 
-    public void setRegNumber(String regNumber) {
-        this.regNumber = regNumber;
+    @Override
+    public void bestLapTime() {
+
     }
 
-    public int getCapacity() {
-        return capacity;
+    @Override
+    public void maxSpeed() {
+
     }
 
-    public boolean isSeasonTires() {
-        return seasonTires;
+    @Override
+    public void pitStop() {
+
     }
 
-    public void setSeasonTires(boolean seasonTires) {
-        this.seasonTires = seasonTires;
+    @Override
+    public void startMoving() {
+
+    }
+
+    @Override
+    public void finishTheMove() {
+
+    }
+
+    @Override
+    void printType() {
+
     }
 
     @Override
     public String toString() {
-        return super.toString() +
-                ", объём двигателя = " + engineVolume +
-                ", коробка передач = " + transmission +'\'' +
-                ", тип кузова = " + bodyType + '\'' +
-                ", рег. номер = " + regNumber + '\'' +
-                ", количество мест = " + capacity + '\'' +
-                (seasonTires ? "зимняя" : "летняя " + "резина") + '\'';
+        return super.toString();
     }
 }
+
