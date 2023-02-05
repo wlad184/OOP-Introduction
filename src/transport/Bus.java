@@ -15,6 +15,19 @@ public class Bus extends Transport<Category_D> {
     public void setCapacityPassengers(CapacityPassengers capacityPassengers) {
         this.capacityPassengers = capacityPassengers;
     }
+    @Override
+    public void pitStop() {
+        System.out.println("bvjvm");
+
+    }
+    @Override
+    public void bestLapTime() {
+    }
+    @Override
+    public void maxSpeed() {
+
+    }
+
 
     @Override
     public void startMoving() {
@@ -26,27 +39,19 @@ public class Bus extends Transport<Category_D> {
 
     }
 
-    @Override
-    public void bestLapTime() {
 
+
+    @Override
+    public void printType() {
 
     }
 
     @Override
-    public void pitStop() {
-        System.out.println("bvjvm");
-
+    public void passDiagnostic() throws TransportTypeException {
+        throw new TransportTypeException("Автобус не проходит диагностику");
     }
 
-    @Override
-    void printType() {
 
-    }
-
-    @Override
-    public void maxSpeed() {
-
-    }
 
     @Override
     public String toString() {

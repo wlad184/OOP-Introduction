@@ -52,14 +52,11 @@ public abstract class Transport<T extends Driver> implements Competing{
 
     abstract void startMoving();
 
-   abstract void finishTheMove();
-   abstract void printType();
+   public abstract void finishTheMove();
+   public abstract void printType();
+   public abstract void passDiagnostic() throws TransportTypeException;
 
 
-
-
-
-    @Override
     public String toString() {
         return "Автомобиль: " +
                 "бренд = " + brand +

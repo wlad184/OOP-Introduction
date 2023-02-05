@@ -17,9 +17,19 @@ public class Trucks extends Transport<Category_C> {
     }
 
     @Override
+    public void pitStop() {
+
+    }
+    @Override
     public void bestLapTime() {
 
     }
+    @Override
+    public void maxSpeed() {
+
+    }
+
+
 
     @Override
     public void startMoving() {
@@ -31,19 +41,18 @@ public class Trucks extends Transport<Category_C> {
 
     }
 
+
+
+
+
     @Override
-    public void maxSpeed() {
+    public void printType() {
 
     }
 
     @Override
-    public void pitStop() {
-
-    }
-
-    @Override
-    void printType() {
-
+    public void passDiagnostic() {
+        System.out.println("Грузовик прошел диагностику");
     }
 
     @Override

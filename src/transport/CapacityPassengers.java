@@ -13,4 +13,12 @@ public enum CapacityPassengers {
         this.minCap = minCap;
         this.maxCap = maxCap;
     }
+
+    @Override
+    public String toString() {
+        return "CapacityPassengers{" +
+                "minCap=" + minCap +
+                ", maxCap=" + maxCap +
+                '}';
+    }
 }

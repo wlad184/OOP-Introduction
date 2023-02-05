@@ -9,12 +9,10 @@ public class Category_B extends Driver {
     void gou() {
 
     }
-
     @Override
     void stop() {
 
     }
-
     @Override
     void refuel() {
 
