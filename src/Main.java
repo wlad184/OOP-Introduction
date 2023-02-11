@@ -1,7 +1,9 @@
 import transport.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static transport.BodyType.*;
 import static transport.CapacityPassengers.*;
@@ -20,7 +22,7 @@ public class Main {
         Mechanic mechanic4 = new Mechanic("UU", "W'W");
 
 
-        Car myCar1 = new Car("Audi","A8", 2.4, category_b, SEDAN, List.of());
+        Car myCar1 = new Car("Audi","A8", 2.4, category_b, SEDAN, List.of(mechanic1));
         Car myCar2 = new Car("BMW","E8", 2.8, category_b,SEDAN, List.of(mechanic2));
         Car myCar3 = new Car("LADA","Vesta", 1.8, category_b,SEDAN, List.of(mechanic1));
 
@@ -65,5 +67,14 @@ public class Main {
 
         System.out.println(myCar1.getMechanicList());
 
+        Map<Transport, Mechanic> map = new HashMap<>();
+        for (int i = 1; i < listTransport.size(); i++){
+            int j = i;
+            if (mechanicList.size() - 1 < i) j = i % mechanicList.size();
+            map.put(listTransport.get(i), mechanicList.get(j));
+        }
+        for (Map.Entry<Transport, Mechanic> log : map.entrySet()){
+            System.out.println(log.getKey() + " механик " + log.getValue());
+        }
     }
 }
