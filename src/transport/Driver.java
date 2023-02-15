@@ -11,13 +11,6 @@ public abstract class Driver {
         this.experience = experience;
     }
 
-    abstract void gou();
-
-    abstract void stop();
-
-    abstract void refuel();
-
-
     public String getFIO() {
         return fIO;
     }
@@ -25,7 +18,6 @@ public abstract class Driver {
     public String getDriverLicenseOnOff() {
         return driverLicenseOnOff;
     }
-
     public void setDriverLicenseOnOff(String driverLicenseOnOff) {
         this.driverLicenseOnOff = driverLicenseOnOff;
     }
@@ -33,17 +25,20 @@ public abstract class Driver {
     public int getExperience() {
         return experience;
     }
-
     public void setExperience(int experience) {
         this.experience = experience;
     }
 
+
+    abstract void gou();
+    abstract void stop();
+    abstract void refuel();
+
+
     @Override
     public String toString() {
-        return "Driver{" +
-                "fIO='" + fIO + '\'' +
-                ", driverLicenseOnOff='" + driverLicenseOnOff + '\'' +
-                ", experience=" + experience +
-                '}';
+        return  "ФИО водителя = " + fIO  + ";" +
+                " наличие вод. удостоверения = " + driverLicenseOnOff + ";" +
+                " стаж вождения = " + experience + " лет" + "\n";
     }
 }

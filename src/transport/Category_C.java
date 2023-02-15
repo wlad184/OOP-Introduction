@@ -9,16 +9,15 @@ public class Category_C extends Driver {
     void gou() {
 
     }
-
     @Override
     void stop() {
 
     }
-
     @Override
     void refuel() {
 
     }
+
 
     @Override
     public String toString() {

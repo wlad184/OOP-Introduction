@@ -1,10 +1,12 @@
 package transport;
 
+import java.util.List;
+
 public class Trucks extends Transport<Category_C> {
     private LoadCapacity loadCapasity;
 
-    public Trucks(String brand, String model, double engineVolume, Category_C driver, LoadCapacity loadCapasity) {
-        super(brand, model, engineVolume, driver);
+    public Trucks(String brand, String model, double engineVolume, Category_C driver, LoadCapacity loadCapasity, List<Mechanic> mechanicList ) {
+        super(brand, model, engineVolume, driver, mechanicList);
         this.loadCapasity = loadCapasity;
     }
 
@@ -17,9 +19,19 @@ public class Trucks extends Transport<Category_C> {
     }
 
     @Override
+    public void pitStop() {
+
+    }
+    @Override
     public void bestLapTime() {
 
     }
+    @Override
+    public void maxSpeed() {
+
+    }
+
+
 
     @Override
     public void startMoving() {
@@ -31,19 +43,18 @@ public class Trucks extends Transport<Category_C> {
 
     }
 
+
+
+
+
     @Override
-    public void maxSpeed() {
+    public void printType() {
 
     }
 
     @Override
-    public void pitStop() {
-
-    }
-
-    @Override
-    void printType() {
-
+    public void passDiagnostic() {
+        System.out.println("Грузовик прошел диагностику");
     }
 
     @Override

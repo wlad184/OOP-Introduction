@@ -9,12 +9,10 @@ public class Category_B extends Driver {
     void gou() {
 
     }
-
     @Override
     void stop() {
 
     }
-
     @Override
     void refuel() {
 
@@ -22,6 +20,6 @@ public class Category_B extends Driver {
 
     @Override
     public String toString() {
-        return "Category_B{}";
+        return super.toString();
     }
 }
