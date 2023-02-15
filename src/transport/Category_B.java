@@ -20,6 +20,6 @@ public class Category_B extends Driver {
 
     @Override
     public String toString() {
-        return "Category_B{}";
+        return super.toString();
     }
 }

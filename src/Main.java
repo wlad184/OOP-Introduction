@@ -1,9 +1,6 @@
 import transport.*;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static transport.BodyType.*;
 import static transport.CapacityPassengers.*;
@@ -12,7 +9,7 @@ import static transport.LoadCapacity.*;
 
 public class Main {
     public static void main(String[] args) {
-        Category_B category_b = new Category_B("asd", "true", 5 );
+        Category_B category_b = new Category_B("asd", "true", 5);
         Category_C category_c = new Category_C("agd", "true", 6);
         Category_D category_d = new Category_D("ask", "true", 7);
 
@@ -76,5 +73,18 @@ public class Main {
         for (Map.Entry<Transport, Mechanic> log : map.entrySet()){
             System.out.println(log.getKey() + " механик " + log.getValue());
         }
+        System.out.println();
+
+        Set<Driver> drivers = new HashSet<>();
+        drivers.add(category_b);
+        drivers.add(category_c);
+        drivers.add(category_d);
+        drivers.add(category_d);
+
+        Iterator<Driver> iterName = drivers.iterator();
+        while (iterName.hasNext()) {
+            System.out.println(iterName.next());
+        }
+
     }
 }

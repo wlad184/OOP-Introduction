@@ -76,8 +76,8 @@ public abstract class Transport<T extends Driver> implements Competing{
 
     public String toString() {
         return "Автомобиль: " +
-                "бренд = " + brand +
-                ", модель = " + model ;
+                " бренд = " + brand +
+                " модель = " + model ;
 
     }
 }
